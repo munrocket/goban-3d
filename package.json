@@ -11,10 +11,6 @@
     "vue",
     "rollup"
   ],
-  "files": [
-    "dist/",
-    "src/"
-  ],
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w"
@@ -32,6 +28,7 @@
     "vue-template-compiler": "^2.5.16"
   },
   "dependencies": {
+    "three": "^0.100.0",
     "vue": "^2.5.16"
   }
 }
