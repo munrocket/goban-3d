@@ -2,7 +2,9 @@
   <main>
     <div class="content-page">
       <h1>Play</h1>
-      <p>This is an abstract strategy 3d board game for two players, in which the aim is to surround more territory than the opponent.</p>
+      <p>This is an abstract strategy 3d board game
+      for two players, in which the aim is to surround
+      more territory than the opponent.</p>
       <blockquote>
         <h2>Active games:</h2>
         <ul>
@@ -13,12 +15,19 @@
       <blockquote>
         <h2>Lobby:</h2>
         <ul>
-          <li>wassap_player</li>
-          <li>who_are_here</li>
-          <li>i_am_just_wathing</li>
-          <li>fuck_off</li>
+          <li>wassap_player (win rate:19/20)</li>
+          <li>who_are_here (win rate:1/10)</li>
+          <li>i_am_just_watching (win rate:-)</li>
+          <li>fuck_off (win rate:-)</li>
         </ul>
       </blockquote>
+    </div>
+    <div class="content-page">
+      <h1>Game settings</h1>
+      <p>Type: &nbsp;torus / klein bottle</p>
+      <p>Rules: &nbsp;chinese / japanese</p>
+      <p>Time: &nbsp;Byo-Yomi (Main time: 15m / Time in periud: 30sec / Periuds: 5)</p>
+      <p>Handicap: 5 stones</p>
     </div>
   </main>
 </template>
@@ -28,24 +37,25 @@
     margin: 20px
   }
   .content-page {
+    background-color: black;
     font-size: 13px;
     line-height: 21px;
     margin: 20px 0;
     width: 500px;
     padding: 25px 55px;
-    border: 1px solid rgba(21, 171, 195, 1.0);
+    border: 1px solid rgba(52, 226, 177, 1.0);
 
     -moz-border-radius: 15px;
     border-radius: 15px;
 
-    -moz-box-shadow: 0 0 9px rgba(21, 171, 195, 1.0);
-    -webkit-box-shadow: 0 0 9px rgba(21, 171, 195, 1.0);
-    box-shadow: 0 0 9px rgba(21, 171, 195, 1.0);
+    -moz-box-shadow: 0 0 20px rgba(52, 226, 177, 1.0);
+    -webkit-box-shadow: 0 0 20px rgba(52, 226, 177, 1.0);
+    box-shadow: 0 0 20px rgba(52, 226, 177, 1.0);
   }
 
   .content-page a {
-    color: rgb(36, 198, 224);
-    text-shadow: 0 0 5px rgba(36, 198, 224, 1.0);
+    color: rgb(52, 226, 177);
+    text-shadow: 0 0 5px rgba(52, 226, 177, 1.0);
     cursor: pointer;
   }
 
@@ -61,12 +71,12 @@
 
     -moz-border-radius: 1em;
     border-radius: 1em;
-    background-color: rgba(36, 198, 224, 1.0);
+    background-color: rgba(52, 226, 177, 1.0);
     color: black;
 
-    -moz-box-shadow: 0 0 10px rgba(36, 198, 224, 1.0);
-    -webkit-box-shadow: 0 0 10px rgba(36, 198, 224, 1.0);
-    box-shadow: 0 0 10px rgba(36, 198, 224, 1.0);
+    -moz-box-shadow: 0 0 8px rgba(52, 226, 177, 1.0);
+    -webkit-box-shadow: 0 0 8px rgba(52, 226, 177, 1.0);
+    box-shadow: 0 0 8px rgba(52, 226, 177, 1.0);
   }
 
   .content-page blockquote {
@@ -79,10 +89,10 @@
     -moz-border-radius: 1em;
     border-radius: 1em;
 
-    border: 2px solid rgba(21, 171, 195, 1.0);
-    -moz-box-shadow: 0 0 5px rgba(21, 171, 195, 1.0);
-    -webkit-box-shadow: 0 0 5px rgba(21, 171, 195, 1.0);
-    box-shadow: 0 0 5px rgba(21, 171, 195, 1.0);
+    border: 2px solid rgba(52, 226, 177, 1.0);
+    -moz-box-shadow: 0 0 5px rgba(52, 226, 177, 1.0);
+    -webkit-box-shadow: 0 0 5px rgba(52, 226, 177, 1.0);
+    box-shadow: 0 0 5px rgba(52, 226, 177, 1.0);
   }
 
   .content-page code {

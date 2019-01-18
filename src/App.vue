@@ -3,11 +3,9 @@
     <header>
       <the-header />
     </header>
-    <div class="body">
-      <main class="content">
-        <the-main />
-      </main>
-    </div>
+    <main class="content">
+      <the-main />
+    </main>
   </div>
 </template>
 
@@ -17,7 +15,9 @@ import TheMain from './components/TheMain.vue';
 
 export default {
   name: 'App',
-  components: { TheHeader, TheMain }
+  components: { TheHeader, TheMain },
+  created() {
+  }
 };
 </script>
 
@@ -25,13 +25,17 @@ export default {
   * {
     cursor: crosshair;
   }
-
+  html {
+    height: 100%;
+  }
   body {
+    min-height: 100%;
     display: block;
     background: black;
-    color: rgba(21, 171, 195, 1.0);
+    background-image: url('src/assets/city.jpg');
+    background-position: bottom;
+    background-repeat: repeat-x;
+    color: rgba(52, 226, 177, 1.0);
     font-family: "Bitstream Vera Sans Mono", monospace;
-    /* give all text a cold glow */
-    text-shadow: 0 0 5px rgba(103, 166, 175, 0.7);
   }
 </style>

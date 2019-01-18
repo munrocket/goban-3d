@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['plugin:vue/recommended', 'jwalker'],
   rules: {
-    'max-len': [1, 180, 4],
+    'max-len': [1, 100, 4],
     'no-console': 0,
     'vue/html-self-closing': 1,
     'vue/max-attributes-per-line': [2, {

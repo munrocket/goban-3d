@@ -22,35 +22,35 @@
     width: 110px;
     -moz-border-radius: 1em;
     border-radius: 1em;
-    border: 1px solid rgba(21, 171, 195, 1.0);
+    border: 1px solid rgba(52, 226, 177, 1.0);
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
     margin-bottom: 0.5ex;
-    -moz-box-shadow: 0 0 10px rgba(21, 171, 195, 0.5);
-    -webkit-box-shadow: 0 0 10px rgba(21, 171, 195, 0.5);
-    box-shadow: 0 0 10px rgba(21, 171, 195, 0.5);
+    -moz-box-shadow: 0 0 10px rgba(52, 226, 177, 0.5);
+    -webkit-box-shadow: 0 0 10px rgba(52, 226, 177, 0.5);
+    box-shadow: 0 0 10px rgba(52, 226, 177, 0.5);
     cursor: pointer;
   }
 
   ul.menu li:hover {
-    color: rgb(36, 198, 224);
-    border-color: rgb(36, 198, 224);
-    -moz-box-shadow: 0 0 10px rgba(36, 198, 224, 1.0);
-    -moz-box-shadow: 0 0 10px rgba(36, 198, 224, 0.9);
-    text-shadow: 0 0 5px rgba(36, 198, 224, 1.0);
+    color: rgb(52, 226, 177);
+    border-color: rgb(52, 226, 177);
+    -moz-box-shadow: 0 0 10px rgba(52, 226, 177, 1.0);
+    -moz-box-shadow: 0 0 10px rgba(52, 226, 177, 0.9);
+    text-shadow: 0 0 5px rgba(52, 226, 177, 1.0);
     cursor: pointer;
   }
 
   ul.menu li:hover a {
-    color: rgb(36, 198, 224);
-    text-shadow: 0 0 5px rgba(36, 198, 224, 1.0);
+    color: rgb(52, 226, 177);
+    text-shadow: 0 0 5px rgba(52, 226, 177, 1.0);
     cursor: pointer;
   }
 
   ul.menu li a {
     cursor: pointer;
     text-decoration: none;
-    color: rgba(21, 171, 195, 1.0);
+    color: rgba(52, 226, 177, 1.0);
   }
 
   ul.menu a:hover,

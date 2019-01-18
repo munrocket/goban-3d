@@ -3,6 +3,8 @@ import buble from 'rollup-plugin-buble';
 import eslint from 'rollup-plugin-eslint';
 import bundleSize from 'rollup-plugin-filesize';
 import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import livereload from 'rollup-plugin-livereload';
 import pkg from './package.json';
 
 const external = Object.keys(pkg.dependencies);
@@ -28,7 +30,9 @@ const plugins = [
     },
     css: true,
   }),
-  buble()
+  buble(),
+  commonjs(),
+  livereload()
 ];
 
 export default {

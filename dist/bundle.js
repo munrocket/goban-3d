@@ -1,3 +1,4 @@
+(function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('vue')) :
   typeof define === 'function' && define.amd ? define(['vue'], factory) :
@@ -123,7 +124,7 @@
   /* style */
   var __vue_inject_styles__ = function (inject) {
     if (!inject) { return }
-    inject("data-v-55783194_0", { source: "\nul.menu {\n  list-style: none;\n  right: 500px;\n  list-style-type: none;\n}\nul.menu li {\n  display: inline;\n  padding: 2px 10px;\n  margin: 1px 3px;\n  width: 110px;\n  -moz-border-radius: 1em;\n  border-radius: 1em;\n  border: 1px solid rgba(21, 171, 195, 1.0);\n  text-align: center;\n  background-color: rgba(0, 0, 0, 0.7);\n  margin-bottom: 0.5ex;\n  -moz-box-shadow: 0 0 10px rgba(21, 171, 195, 0.5);\n  -webkit-box-shadow: 0 0 10px rgba(21, 171, 195, 0.5);\n  box-shadow: 0 0 10px rgba(21, 171, 195, 0.5);\n  cursor: pointer;\n}\nul.menu li:hover {\n  color: rgb(36, 198, 224);\n  border-color: rgb(36, 198, 224);\n  -moz-box-shadow: 0 0 10px rgba(36, 198, 224, 1.0);\n  -moz-box-shadow: 0 0 10px rgba(36, 198, 224, 0.9);\n  text-shadow: 0 0 5px rgba(36, 198, 224, 1.0);\n  cursor: pointer;\n}\nul.menu li:hover a {\n  color: rgb(36, 198, 224);\n  text-shadow: 0 0 5px rgba(36, 198, 224, 1.0);\n  cursor: pointer;\n}\nul.menu li a {\n  cursor: pointer;\n  text-decoration: none;\n  color: rgba(21, 171, 195, 1.0);\n}\nul.menu a:hover,\nul.menu a:active,\nul.menu a:visited:hover,\nul.menu a:active:hover {\n  text-decoration: none;\n  cursor: pointer;\n}\nul.menu li.menu_break {\n  height: 10px;\n  visibility: hidden;\n}\n", map: undefined, media: undefined });
+    inject("data-v-00e09608_0", { source: "\nul.menu {\n  list-style: none;\n  right: 500px;\n  list-style-type: none;\n}\nul.menu li {\n  display: inline;\n  padding: 2px 10px;\n  margin: 1px 3px;\n  width: 110px;\n  -moz-border-radius: 1em;\n  border-radius: 1em;\n  border: 1px solid rgba(52, 226, 177, 1.0);\n  text-align: center;\n  background-color: rgba(0, 0, 0, 0.7);\n  margin-bottom: 0.5ex;\n  -moz-box-shadow: 0 0 10px rgba(52, 226, 177, 0.5);\n  -webkit-box-shadow: 0 0 10px rgba(52, 226, 177, 0.5);\n  box-shadow: 0 0 10px rgba(52, 226, 177, 0.5);\n  cursor: pointer;\n}\nul.menu li:hover {\n  color: rgb(52, 226, 177);\n  border-color: rgb(52, 226, 177);\n  -moz-box-shadow: 0 0 10px rgba(52, 226, 177, 1.0);\n  -moz-box-shadow: 0 0 10px rgba(52, 226, 177, 0.9);\n  text-shadow: 0 0 5px rgba(52, 226, 177, 1.0);\n  cursor: pointer;\n}\nul.menu li:hover a {\n  color: rgb(52, 226, 177);\n  text-shadow: 0 0 5px rgba(52, 226, 177, 1.0);\n  cursor: pointer;\n}\nul.menu li a {\n  cursor: pointer;\n  text-decoration: none;\n  color: rgba(52, 226, 177, 1.0);\n}\nul.menu a:hover,\nul.menu a:active,\nul.menu a:visited:hover,\nul.menu a:active:hover {\n  text-decoration: none;\n  cursor: pointer;\n}\nul.menu li.menu_break {\n  height: 10px;\n  visibility: hidden;\n}\n", map: undefined, media: undefined });
 
   };
   /* scoped */
@@ -378,6 +379,16 @@
   //
   //
   //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
 
   var script$1 = {
     name: 'AppBody'
@@ -402,7 +413,7 @@
           _c("h1", [_vm._v("Play")]),
           _c("p", [
             _vm._v(
-              "This is an abstract strategy 3d board game for two players, in which the aim is to surround more territory than the opponent."
+              "This is an abstract strategy 3d board game\n    for two players, in which the aim is to surround\n    more territory than the opponent."
             )
           ]),
           _c("blockquote", [
@@ -415,12 +426,23 @@
           _c("blockquote", [
             _c("h2", [_vm._v("Lobby:")]),
             _c("ul", [
-              _c("li", [_vm._v("wassap_player")]),
-              _c("li", [_vm._v("who_are_here")]),
-              _c("li", [_vm._v("i_am_just_wathing")]),
-              _c("li", [_vm._v("fuck_off")])
+              _c("li", [_vm._v("wassap_player (win rate:19/20)")]),
+              _c("li", [_vm._v("who_are_here (win rate:1/10)")]),
+              _c("li", [_vm._v("i_am_just_watching (win rate:-)")]),
+              _c("li", [_vm._v("fuck_off (win rate:-)")])
             ])
           ])
+        ]),
+        _c("div", { staticClass: "content-page" }, [
+          _c("h1", [_vm._v("Game settings")]),
+          _c("p", [_vm._v("Type:  torus / klein bottle")]),
+          _c("p", [_vm._v("Rules:  chinese / japanese")]),
+          _c("p", [
+            _vm._v(
+              "Time:  Byo-Yomi (Main time: 15m / Time in periud: 30sec / Periuds: 5)"
+            )
+          ]),
+          _c("p", [_vm._v("Handicap: 5 stones")])
         ])
       ])
     }
@@ -433,7 +455,7 @@
   /* style */
   var __vue_inject_styles__$1 = function (inject) {
     if (!inject) { return }
-    inject("data-v-7d5a7314_0", { source: "\nmain {\n  margin: 20px\n}\n.content-page {\n  font-size: 13px;\n  line-height: 21px;\n  margin: 20px 0;\n  width: 500px;\n  padding: 25px 55px;\n  border: 1px solid rgba(21, 171, 195, 1.0);\n\n  -moz-border-radius: 15px;\n  border-radius: 15px;\n\n  -moz-box-shadow: 0 0 9px rgba(21, 171, 195, 1.0);\n  -webkit-box-shadow: 0 0 9px rgba(21, 171, 195, 1.0);\n  box-shadow: 0 0 9px rgba(21, 171, 195, 1.0);\n}\n.content-page a {\n  color: rgb(36, 198, 224);\n  text-shadow: 0 0 5px rgba(36, 198, 224, 1.0);\n  cursor: pointer;\n}\n.content-page h1 {\n  margin: .8em 0 0 0;\n  font-size: 1.7em;\n  text-align: center;\n  font-weight: bold;\n  padding: .5em;\n  border: 1px solid rgba(36, 198, 24, 1.0);\n  margin-bottom: 1ex;\n  font-family: \"Bitstream Vera Sans Mono\", monospace;\n\n  -moz-border-radius: 1em;\n  border-radius: 1em;\n  background-color: rgba(36, 198, 224, 1.0);\n  color: black;\n\n  -moz-box-shadow: 0 0 10px rgba(36, 198, 224, 1.0);\n  -webkit-box-shadow: 0 0 10px rgba(36, 198, 224, 1.0);\n  box-shadow: 0 0 10px rgba(36, 198, 224, 1.0);\n}\n.content-page blockquote {\n  width: 400px;\n  font-size: 1.3em;\n  text-indent: .5em;\n  padding: 10px 30px 10px;\n  margin: .3em auto;\n\n  -moz-border-radius: 1em;\n  border-radius: 1em;\n\n  border: 2px solid rgba(21, 171, 195, 1.0);\n  -moz-box-shadow: 0 0 5px rgba(21, 171, 195, 1.0);\n  -webkit-box-shadow: 0 0 5px rgba(21, 171, 195, 1.0);\n  box-shadow: 0 0 5px rgba(21, 171, 195, 1.0);\n}\n.content-page code {\n  font-family: \"Bitstream Vera Sans Mono\", monospace;\n  font-style: normal;\n  color: rgba(39, 215, 243, 1.0);\n  text-shadow: 0 0 5px rgba(39, 215, 243, 1.0);\n}\n.content-page blockquote a {\n  font-size: .85em;\n}\n.content-page ul {\n  list-style-type: none;\n  padding-left: 1ex;\n}\n.content-page ul li {\n  background-repeat: no-repeat;\n  background-position: 0 2px;\n}\n.content-page ol {\n  list-style: decimal inside;\n  padding-left: 1ex;\n}\n.content-page ol li {\n  list-style: decimal inside;\n  display: list-item;\n}\n\n/* shared styles for ul and ol items */\n.content-page li {\n  margin: 0.5em 0 .5em;\n  font-size: 13px;\n  line-height: 17px;\n  font-family: \"Bitstream Vera Sans Mono\", monospace;\n}\n", map: undefined, media: undefined });
+    inject("data-v-d472a320_0", { source: "\nmain {\n  margin: 20px\n}\n.content-page {\n  background-color: black;\n  font-size: 13px;\n  line-height: 21px;\n  margin: 20px 0;\n  width: 500px;\n  padding: 25px 55px;\n  border: 1px solid rgba(52, 226, 177, 1.0);\n\n  -moz-border-radius: 15px;\n  border-radius: 15px;\n\n  -moz-box-shadow: 0 0 20px rgba(52, 226, 177, 1.0);\n  -webkit-box-shadow: 0 0 20px rgba(52, 226, 177, 1.0);\n  box-shadow: 0 0 20px rgba(52, 226, 177, 1.0);\n}\n.content-page a {\n  color: rgb(52, 226, 177);\n  text-shadow: 0 0 5px rgba(52, 226, 177, 1.0);\n  cursor: pointer;\n}\n.content-page h1 {\n  margin: .8em 0 0 0;\n  font-size: 1.7em;\n  text-align: center;\n  font-weight: bold;\n  padding: .5em;\n  border: 1px solid rgba(36, 198, 24, 1.0);\n  margin-bottom: 1ex;\n  font-family: \"Bitstream Vera Sans Mono\", monospace;\n\n  -moz-border-radius: 1em;\n  border-radius: 1em;\n  background-color: rgba(52, 226, 177, 1.0);\n  color: black;\n\n  -moz-box-shadow: 0 0 8px rgba(52, 226, 177, 1.0);\n  -webkit-box-shadow: 0 0 8px rgba(52, 226, 177, 1.0);\n  box-shadow: 0 0 8px rgba(52, 226, 177, 1.0);\n}\n.content-page blockquote {\n  width: 400px;\n  font-size: 1.3em;\n  text-indent: .5em;\n  padding: 10px 30px 10px;\n  margin: .3em auto;\n\n  -moz-border-radius: 1em;\n  border-radius: 1em;\n\n  border: 2px solid rgba(52, 226, 177, 1.0);\n  -moz-box-shadow: 0 0 5px rgba(52, 226, 177, 1.0);\n  -webkit-box-shadow: 0 0 5px rgba(52, 226, 177, 1.0);\n  box-shadow: 0 0 5px rgba(52, 226, 177, 1.0);\n}\n.content-page code {\n  font-family: \"Bitstream Vera Sans Mono\", monospace;\n  font-style: normal;\n  color: rgba(39, 215, 243, 1.0);\n  text-shadow: 0 0 5px rgba(39, 215, 243, 1.0);\n}\n.content-page blockquote a {\n  font-size: .85em;\n}\n.content-page ul {\n  list-style-type: none;\n  padding-left: 1ex;\n}\n.content-page ul li {\n  background-repeat: no-repeat;\n  background-position: 0 2px;\n}\n.content-page ol {\n  list-style: decimal inside;\n  padding-left: 1ex;\n}\n.content-page ol li {\n  list-style: decimal inside;\n  display: list-item;\n}\n\n/* shared styles for ul and ol items */\n.content-page li {\n  margin: 0.5em 0 .5em;\n  font-size: 13px;\n  line-height: 17px;\n  font-family: \"Bitstream Vera Sans Mono\", monospace;\n}\n", map: undefined, media: undefined });
 
   };
   /* scoped */
@@ -565,7 +587,9 @@
 
   var script$2 = {
     name: 'App',
-    components: { TheHeader: TheHeader, TheMain: TheMain }
+    components: { TheHeader: TheHeader, TheMain: TheMain },
+    created: function created() {
+    }
   };
 
   var __vue_script__$2 = script$2;
@@ -577,9 +601,7 @@
     var _c = _vm._self._c || _h;
     return _c("div", { staticClass: "layout", attrs: { id: "app" } }, [
       _c("header", [_c("the-header")], 1),
-      _c("div", { staticClass: "body" }, [
-        _c("main", { staticClass: "content" }, [_c("the-main")], 1)
-      ])
+      _c("main", { staticClass: "content" }, [_c("the-main")], 1)
     ])
   };
   var __vue_staticRenderFns__$2 = [];
@@ -591,7 +613,7 @@
   /* style */
   var __vue_inject_styles__$2 = function (inject) {
     if (!inject) { return }
-    inject("data-v-75e432a3_0", { source: "\n* {\n  cursor: crosshair;\n}\nbody {\n  display: block;\n  background: black;\n  color: rgba(21, 171, 195, 1.0);\n  font-family: \"Bitstream Vera Sans Mono\", monospace;\n  /* give all text a cold glow */\n  text-shadow: 0 0 5px rgba(103, 166, 175, 0.7);\n}\n", map: undefined, media: undefined });
+    inject("data-v-4147b74f_0", { source: "\n* {\n  cursor: crosshair;\n}\nhtml {\n  height: 100%;\n}\nbody {\n  min-height: 100%;\n  display: block;\n  background: black;\n  background-image: url('src/assets/city.jpg');\n  background-position: bottom;\n  background-repeat: repeat-x;\n  color: rgba(52, 226, 177, 1.0);\n  font-family: \"Bitstream Vera Sans Mono\", monospace;\n}\n", map: undefined, media: undefined });
 
   };
   /* scoped */
@@ -718,6 +740,9 @@
     typeof __vue_create_injector__$2 !== 'undefined' ? __vue_create_injector__$2 : function () {},
     typeof __vue_create_injector_ssr__ !== 'undefined' ? __vue_create_injector_ssr__ : function () {}
   )
+
+  //import THREE from 'three';
+  //Object.defineProperty(Vue.prototype, '$three', { value: THREE });
 
   var app = new Vue({
     render: function (h) { return h(App); }
