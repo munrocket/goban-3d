@@ -1,41 +1,31 @@
 <template>
-  <main>
-    <div class="content-page">
-      <h1>Play</h1>
-      <p>This is an abstract strategy 3d board game
-      for two players, in which the aim is to surround
-      more territory than the opponent.</p>
-      <blockquote>
-        <h2>Active games:</h2>
-        <ul>
-          <li>Player1 vs Anon &nbsp; &nbsp; (move ~54, torus)</li>
-          <li>Kid125 vs CyberIO &nbsp; (move ~10, klein bottle)</li>
-        </ul>
-      </blockquote>
-      <blockquote>
-        <h2>Lobby:</h2>
-        <ul>
-          <li>wassap_player (win rate:19/20)</li>
-          <li>who_are_here (win rate:1/10)</li>
-          <li>i_am_just_watching (win rate:-)</li>
-          <li>fuck_off (win rate:-)</li>
-        </ul>
-      </blockquote>
-    </div>
-    <div class="content-page">
-      <h1>Game settings</h1>
-      <p>Type: &nbsp;torus / klein bottle</p>
-      <p>Rules: &nbsp;chinese / japanese</p>
-      <p>Time: &nbsp;Byo-Yomi (Main time: 15m / Time in periud: 30sec / Periuds: 5)</p>
-      <p>Handicap: 5 stones</p>
-    </div>
-  </main>
+  <div class="players content-page">
+    <PlayersList :players="players"/>
+  </div>
 </template>
 
-<style>
-  main {
-    margin: 20px
+<script>
+import PlayersList from "@/components/PlayersList.vue";
+
+export default {
+  name: "players",
+  components: {
+    PlayersList
+  },
+  data() {
+    return {
+      players: [
+        { id: "wassup_player", win: 19, loss: 1, status: 0 },
+        { id: "who_are_here", win: 1, loss: 9, status: 0 },
+        { id: "i_am_just_watching", win: 0, loss: 0, status: 1 },
+        { id: "i_am_busy", win: 0, loss: 0, status: 10 }
+      ]
+    };
   }
+};
+</script>
+
+<style>
   .content-page {
     background-color: black;
     font-size: 13px;
@@ -134,9 +124,3 @@
     font-family: "Bitstream Vera Sans Mono", monospace;
   }
 </style>
-
-<script>
-export default {
-  name: 'AppBody'
-};
-</script>

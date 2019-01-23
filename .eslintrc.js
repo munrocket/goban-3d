@@ -1,6 +1,15 @@
 module.exports = {
-  extends: ['plugin:vue/recommended', 'jwalker'],
-  rules: {
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": [
+    'plugin:vue/recommended',
+    "plugin:vue/essential",
+    'jwalker',
+    "@vue/prettier"
+  ],
+  "rules": {
     'max-len': [1, 100, 4],
     'no-console': 0,
     'vue/html-self-closing': 1,
@@ -11,5 +20,8 @@ module.exports = {
         allowFirstLine: false
       }
     }]
+  },
+  "parserOptions": {
+    "parser": "babel-eslint"
   }
 };
