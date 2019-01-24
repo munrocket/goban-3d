@@ -3,7 +3,8 @@
     <h1>Players</h1>
     <ul>
       <li v-for="player in players" :key="player.id">
-        {{ player.id }} (winrate: {{player.win}}/{{player.win + player.loss}}, avalible:{{ !player.status}})
+        {{ player.id }} (winrate: {{player.win}}/{{player.win + player.loss}},
+            avalible:{{ !player.status}})
       </li>
     </ul>
   </div>
@@ -12,10 +13,11 @@
 <script>
 export default {
   name: "PlayersList",
-  props: ["players"]
+  props: {
+    players: {
+      type: Object,
+      required: true
+    }
+  }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-</style>

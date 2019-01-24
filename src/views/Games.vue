@@ -1,16 +1,18 @@
 <template>
-  <div class="games">
+  <list-wrapper>
     <GamesList :games="games"/>
-  </div>
+  </list-wrapper>
 </template>
 
 <script>
 import GamesList from "@/components/GamesList.vue";
+import ListWrapper from "@/components/ListWrapper.vue";
 
 export default {
-  name: "games",
+  name: "Games",
   components: {
-    GamesList
+    GamesList,
+    ListWrapper
   },
   data() {
     return {
@@ -22,6 +24,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

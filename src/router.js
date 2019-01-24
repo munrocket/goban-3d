@@ -11,24 +11,24 @@ export default new Router({
     { path: "/", redirect: "/players" },
     {
       path: "/players",
-      name: "players",
+      name: "Players",
       component: Players
     },
     {
       path: "/games",
-      name: "games",
+      name: "Games",
       component: Games
     },
     {
       path: "/chat",
-      name: "chat",
+      name: "Chat",
       component: function() {
         return import("./views/Chat.vue");
       }
     },
     {
       path: "/about",
-      name: "about",
+      name: "About",
       component: About
     }
   ]

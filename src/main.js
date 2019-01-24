@@ -6,7 +6,7 @@ import axios from "axios";
 
 Vue.config.productionTip = false;
 
-Vue.prototype.$server = "";
+Vue.prototype.$server = "https://goban-3d.herokuapp.com/";
 Vue.prototype.axios = axios;
 
 new Vue({

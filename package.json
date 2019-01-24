@@ -1,11 +1,14 @@
 {
-  "name": "goban-2d",
+  "name": "goban-3d",
   "version": "0.1.0",
-  "private": true,
+  "author": "munrocket",
+  "license": "GPL-3.0",
+  "wst": "/dist/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "node ./node_modules/vue-gh-pages/index.js -b gh-pages"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -21,6 +24,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "vue-gh-pages": "^1.19.0",
     "vue-template-compiler": "^2.5.21"
   },
   "postcss": {
@@ -29,8 +33,8 @@
     }
   },
   "browserslist": [
-    "> 1%",
+    "> 8%",
     "last 2 versions",
-    "not ie <= 8"
+    "not ie < 11"
   ]
 }

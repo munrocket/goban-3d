@@ -1,19 +1,18 @@
 <template>
-  <div class="chat">
+  <list-wrapper>
     <ChatList/>
-  </div>
+  </list-wrapper>
 </template>
 
 <script>
 import ChatList from "@/components/ChatList.vue";
+import ListWrapper from "@/components/ListWrapper.vue";
 
 export default {
-  name: "chat",
+  name: "Chat",
   components: {
-    ChatList
+    ChatList,
+    ListWrapper
   }
 };
 </script>
-
-<style>
-</style>

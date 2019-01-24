@@ -6,7 +6,6 @@ module.exports = {
   "extends": [
     'plugin:vue/recommended',
     "plugin:vue/essential",
-    'jwalker',
     "@vue/prettier"
   ],
   "rules": {
