@@ -12,6 +12,7 @@ export default {
 
 <style>
 .content-page {
+  cursor: default;
   background-color: black;
   font-size: 13px;
   line-height: 21px;

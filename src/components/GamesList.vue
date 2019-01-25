@@ -14,7 +14,7 @@ export default {
   name: "GamesList",
   props: {
     games: {
-      type: Object,
+      type: Array,
       required: true
     }
   }

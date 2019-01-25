@@ -15,7 +15,7 @@ export default {
   name: "PlayersList",
   props: {
     players: {
-      type: Object,
+      type: Array,
       required: true
     }
   }

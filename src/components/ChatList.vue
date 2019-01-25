@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Chat</h1>
-    <p>fish fish fish</p>
+    <p>bla-bla</p>
   </div>
 </template>
 

@@ -9,18 +9,27 @@
       </ul>
     </div>
     <router-view/>
-    <img alt="Vue logo" src="./assets/logo.png">
+    <canvas-renderer/>
   </div>
 </template>
 
-<style lang="scss">
-* {
-  cursor: crosshair;
+<script>
+import CanvasRenderer from "@/components/CanvasRenderer.vue";
+
+export default {
+  name: "App",
+  components: {
+    CanvasRenderer
+  }
 }
+</script>
+
+<style lang="scss">
 html {
   height: 100%;
 }
 body {
+  cursor: crosshair;
   min-height: 100%;
   display: block;
   background: black;
@@ -41,13 +50,11 @@ ul.menu li {
   display: inline;
   padding: 2px 10px;
   margin: 1px 3px;
-  width: 110px;
   -moz-border-radius: 1em;
   border-radius: 1em;
   border: 1px solid rgba(52, 226, 177, 1);
   text-align: center;
   background-color: rgba(0, 0, 0, 0.7);
-  margin-bottom: 0.5ex;
   -moz-box-shadow: 0 0 10px rgba(52, 226, 177, 0.5);
   -webkit-box-shadow: 0 0 10px rgba(52, 226, 177, 0.5);
   box-shadow: 0 0 10px rgba(52, 226, 177, 0.5);
@@ -57,8 +64,8 @@ ul.menu li {
 ul.menu li:hover {
   color: rgb(52, 226, 177);
   border-color: rgb(52, 226, 177);
+  box-shadow: 0 0 10px rgba(52, 226, 177, 1);
   -moz-box-shadow: 0 0 10px rgba(52, 226, 177, 1);
-  -moz-box-shadow: 0 0 10px rgba(52, 226, 177, 0.9);
   text-shadow: 0 0 5px rgba(52, 226, 177, 1);
   cursor: pointer;
 }
