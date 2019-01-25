@@ -1,9 +1,10 @@
 <template>
-  <canvas id="canvas" width="300" height="150"/>
+    <div id="canvas"/>
 </template>
 
 <script>
 import * as Three from "three";
+import OrbitControls from "three-orbitcontrols";
 
 export default {
   name: "CanvasRenderer",
@@ -12,6 +13,7 @@ export default {
       camera: null,
       scene: null,
       renderer: null,
+      controls: null,
       mesh: null
     };
   },
@@ -21,34 +23,38 @@ export default {
   },
   methods: {
     init: function() {
-      let canvas = document.getElementById("c");
-
+      let canvas = document.getElementById("canvas");
       this.camera = new Three.PerspectiveCamera(
         70,
         canvas.clientWidth / canvas.clientHeight,
         0.01,
         10
       );
-      this.camera.position.z = 1;
-
+      this.camera.position.set(0, -2, 2);
       this.scene = new Three.Scene();
-
-      let geometry = new Three.BoxGeometry(0.2, 0.2, 0.2);
-      let material = new Three.MeshNormalMaterial();
-
+      const geometry = new Three.TorusGeometry(1.2, 0.3, 16, 100);
+      const material = new Three.MeshBasicMaterial({ color: 0x34E2B1 });
       this.mesh = new Three.Mesh(geometry, material);
       this.scene.add(this.mesh);
-
-      this.renderer = new Three.WebGLRenderer({ antialias: true });
+      this.renderer = new Three.WebGLRenderer({ antialias: true, alpha: true });
       this.renderer.setSize(canvas.clientWidth, canvas.clientHeight);
       canvas.appendChild(this.renderer.domElement);
+      this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+      this.controls.enableDamping = true;
+      this.controls.dampingFactor = 1.0;
+      this.controls.enableZoom = true;
     },
     animate: function() {
       requestAnimationFrame(this.animate);
-      this.mesh.rotation.x += 0.01;
-      this.mesh.rotation.y += 0.02;
       this.renderer.render(this.scene, this.camera);
     }
   }
 };
 </script>
+
+<style scoped>
+#canvas {
+  width: 600px;
+  height: 300px;
+}
+</style>
