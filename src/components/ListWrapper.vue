@@ -1,17 +1,19 @@
 <template>
-  <div class="content-page">
-    <slot/>
+  <div class="box">
+    <article class="media">
+      <slot />
+    </article>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ListWrapper"
+  name: 'ListWrapper'
 };
 </script>
 
-<style>
-.content-page {
+<style lang="scss">
+/* .content-page {
   cursor: default;
   background-color: black;
   font-size: 13px;
@@ -102,11 +104,10 @@ export default {
   display: list-item;
 }
 
-/* shared styles for ul and ol items */
 .content-page li {
   margin: 0.5em 0 0.5em;
   font-size: 13px;
   line-height: 17px;
   font-family: "Bitstream Vera Sans Mono", monospace;
-}
+} */
 </style>

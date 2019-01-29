@@ -1,21 +1,25 @@
 <template>
   <div>
-    <h1>Chat</h1>
-    <p>bla-bla</p>
+    <h1 class="title">
+      Chat
+    </h1>
+    <div>
+      <p v-for="msg in messages" :key="msg.id" :ref="'msg_'.concat(msg.id)">
+        <span class="has-text-weight-semibold">
+          {{ msg.player }}:
+        </span> {{ msg.text }}
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ChatList",
-  watch: {
-    fish: function() {
-      let result;
-      this.axios.get("https://jsonplaceholder.typicode.com/posts")
-        .then(response => {
-          this.fish = response;
-        });
-      return result;
+  name: 'ChatList',
+  props: {
+    messages: {
+      type: Array,
+      required: true
     }
   }
 };

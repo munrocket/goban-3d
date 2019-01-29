@@ -1,13 +1,13 @@
 <template>
-    <div id="canvas"/>
+  <div id="canvas" />
 </template>
 
 <script>
-import * as Three from "three";
-import OrbitControls from "three-orbitcontrols";
+import * as Three from 'three';
+import OrbitControls from 'three-orbitcontrols';
 
 export default {
-  name: "CanvasRenderer",
+  name: 'CanvasRenderer',
   data() {
     return {
       camera: null,
@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     init: function() {
-      let canvas = document.getElementById("canvas");
+      let canvas = document.getElementById('canvas');
       this.camera = new Three.PerspectiveCamera(
         70,
         canvas.clientWidth / canvas.clientHeight,
@@ -32,8 +32,8 @@ export default {
       );
       this.camera.position.set(0, -2, 2);
       this.scene = new Three.Scene();
-      const geometry = new Three.TorusGeometry(1.2, 0.3, 16, 100);
-      const material = new Three.MeshBasicMaterial({ color: 0x34E2B1 });
+      const geometry = new Three.TorusGeometry(1, 0.3, 16, 100);
+      const material = new Three.MeshBasicMaterial({ color: 0x34e2b1 });
       this.mesh = new Three.Mesh(geometry, material);
       this.scene.add(this.mesh);
       this.renderer = new Three.WebGLRenderer({ antialias: true, alpha: true });
@@ -54,7 +54,8 @@ export default {
 
 <style scoped>
 #canvas {
-  width: 600px;
-  height: 300px;
+  cursor: crosshair;
+  width: 100%;
+  height: 100%;
 }
 </style>

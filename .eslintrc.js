@@ -4,11 +4,12 @@ module.exports = {
     "node": true
   },
   "extends": [
-    'plugin:vue/recommended',
+    "plugin:vue/recommended",
     "plugin:vue/essential",
-    "@vue/prettier"
+    "prettier"
   ],
   "rules": {
+    "quotes": ["error", "single"],
     'max-len': [1, 100, 4],
     'no-console': 0,
     'vue/html-self-closing': 1,
