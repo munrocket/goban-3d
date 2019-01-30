@@ -7,8 +7,12 @@
       <thead>
         <tr>
           <th>name</th>
-          <th>win rate</th>
-          <th>status</th>
+          <th class="has-text-centered">
+            win rate
+          </th>
+          <th class="has-text-centered">
+            status
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -20,9 +24,9 @@
             {{ player.win }}/{{ player.win + player.loss }}
           </td>
           <td class="has-text-centered">
-            <i v-if="player.status == 0" />
-            <i v-else-if="player.status == 1" class="fas fa-eye" />
-            <i v-else class="fas fa-gamepad" />
+            <font-awesome-icon v-if="player.status == 0" />
+            <font-awesome-icon v-else-if="player.status == 1" icon="eye" /> 
+            <font-awesome-icon v-else icon="gamepad" /> 
           </td>
         </tr>
       </tbody>

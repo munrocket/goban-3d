@@ -7,15 +7,23 @@
       <thead>
         <tr>
           <th>players</th>
-          <th>move</th>
-          <th>model type</th>
+          <th class="has-text-centered">
+            move
+          </th>
+          <th class="has-text-centered">
+            model type
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="game in games" :key="game.gameId" :ref="'game_'.concat(game.gameId)">
           <td>{{ game.id1 }} vs {{ game.id2 }}</td>
-          <td>{{ game.move }}</td>
-          <td>{{ game.modelType }}</td>
+          <td class="has-text-centered">
+            {{ game.move }}
+          </td>
+          <td class="has-text-centered">
+            {{ game.modelType }}
+          </td>
         </tr>
       </tbody>
     </table>

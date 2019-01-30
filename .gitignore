@@ -1,5 +1,10 @@
+# Build directory
 dist
-docs
+
+# Builded styles
+src/assets/styles.css
+
+# Editor
 .vscode
 
 # Logs

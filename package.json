@@ -13,11 +13,14 @@
     "serve-styles": "npm run build-styles -- --watch",
     "build": "npm run build-styles && npm run build-vue",
     "build-vue": "vue-cli-service build",
-    "build-styles": "node-sass -x ./src/assets/styles/custom-bulma.scss ./src/assets/styles/custom-bulma.css",
+    "build-styles": "node-sass -x ./src/assets/styles.scss ./src/assets/styles.css",
     "lint": "vue-cli-service lint",
     "deploy": "node ./node_modules/vue-gh-pages/index.js -b gh-pages"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.13",
+    "@fortawesome/free-solid-svg-icons": "^5.7.0",
+    "@fortawesome/vue-fontawesome": "^0.1.5",
     "axios": "^0.18.0",
     "three": "^0.100.0",
     "three-orbitcontrols": "^2.99.1",
@@ -25,10 +28,8 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.7.0",
     "@vue/cli-plugin-eslint": "^3.0.4",
     "@vue/cli-service": "^3.0.4",
-    "@vue/eslint-config-prettier": "^4.0.1",
     "bulma": "^0.7.2",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
@@ -44,7 +45,7 @@
     }
   },
   "browserslist": [
-    "> 8%",
+    "> 1.5%",
     "last 2 versions",
     "not ie < 11"
   ]
