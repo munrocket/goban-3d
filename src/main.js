@@ -4,30 +4,19 @@ import router from './router';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUsers, faGamepad, faCommentDots, faInfoCircle, faEye }
+import { faUsers, faGamepad, faCommentDots, faInfoCircle, faEye, faSignInAlt }
   from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faTwitter, faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './assets/styles.css';
 
 Vue.config.productionTip = false;console.log();
 
 // axios
-Vue.prototype.axios = axios;
+Vue.prototype.axios = axios.create({ baseURL: 'http://localhost:3000/'});
 
 // fontawesome
-library.add(faUsers, faGamepad, faCommentDots, faInfoCircle, faEye);
+library.add(faUsers, faGamepad, faCommentDots, faInfoCircle, faEye, faSignInAlt, faFacebook, faTwitter, faGoogle, faGithub);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-
-// authenticate
-// import VueAuthenticate from 'vue-authenticate';
-// Vue.use(VueAuthenticate, {
-//   baseUrl: 'http://localhost:3000',
-//   providers: {
-//     github: {
-//       clientId: '',
-//       redirectUri: 'http://localhost:8080/auth/callback'
-//     }
-//   }
-// });
 
 new Vue({
   router,

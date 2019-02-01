@@ -1,17 +1,19 @@
 <template>
-  <list-wrapper>
-    <ChatList :messages="messages" />
+  <list-wrapper title="Chat">
+    <p v-for="msg in messages" :key="msg.id" :ref="'msg_'.concat(msg.id)">
+      <span class="has-text-weight-semibold">
+        {{ msg.player }}:
+      </span> {{ msg.text }}
+    </p>
   </list-wrapper>
 </template>
 
 <script>
-import ChatList from '../components/ChatList.vue';
 import ListWrapper from '../components/ListWrapper.vue';
 
 export default {
   name: 'Chat',
   components: {
-    ChatList,
     ListWrapper
   },
   data() {

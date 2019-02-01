@@ -32,7 +32,7 @@ export default {
       );
       this.camera.position.set(0, -2, 2);
       this.scene = new Three.Scene();
-      const geometry = new Three.TorusGeometry(1, 0.3, 16, 100);
+      const geometry = new Three.TorusGeometry(1, 0.3, 20, 60); 1600 
       const material = new Three.MeshBasicMaterial({ color: 0x34e2b1 });
       this.mesh = new Three.Mesh(geometry, material);
       this.scene.add(this.mesh);

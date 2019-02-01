@@ -1,6 +1,14 @@
 <template>
   <section id="app" class="section container">
     <div class="columns row-reverse">
+      <div id="login">
+        <router-link to="/login" class="button is-rounded">
+          <span class="icon is-small">
+            <font-awesome-icon icon="sign-in-alt" />
+          </span>
+          <span>Login</span>
+        </router-link>
+      </div>
       <div class="column is-half">
         <canvas-renderer />
       </div>
@@ -29,7 +37,7 @@
 </template>
 
 <script>
-import CanvasRenderer from '@/components/CanvasRenderer.vue';
+import CanvasRenderer from './components/CanvasRenderer.vue';
 
 export default {
   name: 'App',
@@ -38,6 +46,7 @@ export default {
   },
   data() {
     return {
+      showLogin: true,
       menu: [
         { url: '/players', name: 'Players', icon: 'users' },
         { url: '/games', name: 'Games', icon: 'gamepad' },
@@ -50,7 +59,21 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+
 .row-reverse {
   flex-direction: row-reverse;
+}
+#login {
+  position: absolute;
+  padding: .75rem;
+}
+#login .button {
+  height: auto;
+  padding: 0.5em 1.5em;
+}
+#login .is-active {
+  @extend .is-link;
 }
 </style>

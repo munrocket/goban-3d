@@ -21,11 +21,13 @@ $box-radius: 25px;
 // Import only what you need from Bulma
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/sass/base/_all.sass";
-@import "../../node_modules/bulma/sass/layout/section.sass";
-@import "../../node_modules/bulma/sass/components/tabs.sass";
 @import "../../node_modules/bulma/sass/grid/columns.sass";
+@import "../../node_modules/bulma/sass/layout/section.sass";
 @import "../../node_modules/bulma/sass/elements/container.sass";
 @import "../../node_modules/bulma/sass/elements/title.sass";
 @import "../../node_modules/bulma/sass/elements/box.sass";
 @import "../../node_modules/bulma/sass/elements/table.sass";
+@import "../../node_modules/bulma/sass/elements/button.sass";
+@import "../../node_modules/bulma/sass/elements/form.sass";
+@import "../../node_modules/bulma/sass/components/tabs.sass";
 // @import "../../node_modules/bulma/bulma.sass";

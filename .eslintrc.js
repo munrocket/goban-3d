@@ -9,7 +9,7 @@ module.exports = {
   ],
   "rules": {
     "quotes": ["error", "single"],
-    'max-len': [1, 100, 4],
+    'max-len': [1, 110, 4],
     'no-console': 1,
     'vue/html-self-closing': 1,
     'vue/max-attributes-per-line': [2, {
