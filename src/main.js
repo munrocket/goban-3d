@@ -12,7 +12,7 @@ import './assets/styles.css';
 Vue.config.productionTip = false;console.log();
 
 // axios
-Vue.prototype.axios = axios.create({ baseURL: 'http://localhost:3000/'});
+Vue.prototype.axios = axios.create({ withCredentials: true, baseURL: 'http://localhost:3000/'});
 
 // fontawesome
 library.add(faUsers, faGamepad, faCommentDots, faInfoCircle, faEye, faSignInAlt, faFacebook, faTwitter, faGoogle, faGithub);

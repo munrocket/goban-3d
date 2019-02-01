@@ -11,3 +11,11 @@ This is an [example](https://munrocket.github.io/goban-3d/) of go board in 3d.
 - [ ] soket.io connection
 - [ ] board texture & stones
 - [ ] coordinates by click
+
+### How to open project
+```bash
+git clone <project_url>
+npm install
+npm run build
+npm run serve
+```

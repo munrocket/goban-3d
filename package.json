@@ -8,7 +8,7 @@
     "publicPath": "/"
   },
   "scripts": {
-    "serve": "npm-run-all --parallel serve-vue serve-styles",
+    "serve": "npm-run-all --parallel serve-styles serve-vue",
     "serve-vue": "vue-cli-service serve",
     "serve-styles": "npm run build-styles -- --watch",
     "build": "npm run build-styles && npm run build-vue",

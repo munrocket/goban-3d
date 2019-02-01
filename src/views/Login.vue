@@ -3,14 +3,29 @@
     <form>
       <div class="field-body field">
         <div class="field">
-          <input class="input" type="text" placeholder="Login">
+          <input
+            v-model="form.login"
+            class="input"
+            type="text"
+            placeholder="Login"
+          >
         </div>
         <div class="field">
-          <input class="input" type="email" placeholder="Email">
+          <input
+            v-model="form.email"
+            class="input"
+            type="email"
+            placeholder="Email"
+          >
         </div>
       </div>
       <div class="field">
-        <input class="input" type="password" placeholder="Password">
+        <input
+          v-model="form.password"
+          class="input"
+          type="password"
+          placeholder="Password"
+        >
       </div>
       <div class="field-body field">
         <div class="control">
@@ -19,21 +34,21 @@
           </button>
         </div>
         <div class="control little-margin-left">
-          <button class="button">
+          <button class="button" @click="registr()">
             Sign up
           </button>
         </div>
         <div class="field-label" />
-        <button class="button is-rounded">
+        <a class="button is-rounded" href="http://localhost:3000/auth/facebook">
           <font-awesome-icon :icon="['fab', 'facebook']" />
-        </button>
-        <button class="button is-rounded">
+        </a>
+        <a class="button is-rounded" href="http://localhost:3000/auth/twitter">
           <font-awesome-icon :icon="['fab', 'twitter']" />
-        </button>
-        <button class="button is-rounded">
+        </a>
+        <button class="button is-rounded" @click="google()">
           <font-awesome-icon :icon="['fab', 'google']" />
         </button>
-        <button class="button is-rounded">
+        <button class="button is-rounded" @click="github()">
           <font-awesome-icon :icon="['fab', 'github']" />
         </button>
       </div>
@@ -49,32 +64,37 @@ export default {
   components: {
     ListWrapper
   },
+  data() {
+    return {
+      form: {} 
+    }
+  },
   methods: {
     authLogin() {
       this.axios.post('auth/login', {
-        email: 'email@test.com',
-        password: 'PASSWORD'
-      }).then(console.log('authLogin'));
+        email: this.formEmail,
+        password: this.formPassword
+      }).then(console.log('login ok', this.form.email, this.form.password))
+      .catch(console.log('login error', this.form.email, this.form.password));
     },
     registr() {
       this.axios.post('registr', {
-        name: 'myname',
-        email: 'email@test.com',
-        password: 'PASSWORD',
-        passwordConfirm: 'PASSWORDCONFIRM'
-      }).then(console.log('registr'));
-    },
-    facebook() {
-      this.axios.post('facebook').then(console.log('facebook'));
-    },
-    twitter() {
-      this.axios.post('twitter').then(console.log('twitter'));
+        login: this.form.login,
+        email: this.form.email,
+        password: this.form.password,
+        passwordConfirm: this.form.password
+      }).then(console.log('registr ok'), this.form.login, this.form.email, this.form.password)
+      .catch(console.log('regitstr error', this.form.login, this.form.email, this.form.password));
     },
     google() {
-      this.axios.post('google').then(console.log('google'));
+      this.axios.post('auth/google')
+      .then(console.log('google'))
+      .catch(console.log('google error'));
     },
     github() {
-      this.axios.post('github').then(console.log('github'));
+      this.axios.post('auth/github')
+      .then(console.log('github'))
+      .catch(console.log('github error'));
     },
   }
 }
