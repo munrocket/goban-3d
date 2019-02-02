@@ -5,6 +5,7 @@
 <script>
 import * as Three from 'three';
 import OrbitControls from 'three-orbitcontrols';
+import texImage from '../assets/texture.jpg';
 
 export default {
   name: 'CanvasRenderer',
@@ -33,7 +34,8 @@ export default {
       this.camera.position.set(0, -2, 2);
       this.scene = new Three.Scene();
       const geometry = new Three.TorusGeometry(1, 0.3, 20, 60); 1600 
-      const material = new Three.MeshBasicMaterial({ color: 0x34e2b1 });
+      const texture = new Three.TextureLoader().load(texImage);
+      const material = new Three.MeshBasicMaterial({ map: texture });
       this.mesh = new Three.Mesh(geometry, material);
       this.scene.add(this.mesh);
       this.renderer = new Three.WebGLRenderer({ antialias: true, alpha: true });
