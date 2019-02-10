@@ -5,11 +5,15 @@
         {{ msg.player }}:
       </span> {{ msg.text }}
     </p>
+    <button @click="sendMsg()">
+      Send
+    </button>
   </list-wrapper>
 </template>
 
 <script>
 import ListWrapper from '../components/ListWrapper.vue';
+import { io } from '../utils/socket.js';
 
 export default {
   name: 'Chat',
@@ -24,6 +28,18 @@ export default {
         { id: '3', player: 'wassup_player', text: 'this is really cool' },
         { id: '4', player: 'who_are_here', text: 'yep, i love it too' }
       ]
+    }
+  },
+  mounted() {
+    io.socket.on('message', (data) => {
+      if (data.roomName === 'global') this.messages.push(data.message);
+    });
+  },
+  methods: {
+    sendMsg() {
+      io.emit('global', { roomName:'global', message: 'test'}, (data) => {
+        console.log(data);
+      });
     }
   }
 };

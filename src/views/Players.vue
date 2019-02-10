@@ -33,6 +33,7 @@
 
 <script>
 import ListWrapper from '../components/ListWrapper.vue';
+//import { io } from '../utils/socket.js';
 
 export default {
   name: 'Players',
@@ -41,8 +42,16 @@ export default {
   },
   data() {
     return {
-      players: [
-        { id: 'wassup_player', win: 19, loss: 1, status: 0 },
+      players: []
+    };
+  },
+  mounted() {
+    try {
+      socket.emit('rooms', (data) => {
+        this.players = data.players;
+      });
+    } catch (ex) {
+      this.players = [{ id: 'wassup_player', win: 19, loss: 1, status: 0 },
         { id: 'who_are_here', win: 1, loss: 9, status: 0 },
         { id: 'i_am_just_watching', win: 0, loss: 0, status: 1 },
         { id: 'i_am_busy', win: 0, loss: 0, status: 10 },
@@ -54,9 +63,8 @@ export default {
         { id: 'who_are_here2', win: 1, loss: 9, status: 0 },
         { id: 'i_am_just_watching2', win: 0, loss: 0, status: 1 },
         { id: 'i_am_busy2', win: 0, loss: 0, status: 10 },
-        { id: 'wassup_player3', win: 19, loss: 1, status: 0 },
-      ]
-    };
+        { id: 'wassup_player3', win: 19, loss: 1, status: 0 }];
+    }
   }
 };
 </script>
