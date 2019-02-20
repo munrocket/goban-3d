@@ -29,12 +29,12 @@
       </div>
       <div class="field-body field">
         <div class="control">
-          <button class="button is-primary" @click="authLogin()">
+          <button class="button is-primary" @click="login()">
             Sign in
           </button>
         </div>
         <div class="control little-margin-left">
-          <button class="button" @click="registr()">
+          <button class="button" @click="singup()">
             Sign up
           </button>
         </div>
@@ -58,6 +58,8 @@
 
 <script>
 import ListWrapper from '../components/ListWrapper.vue';
+import axios from '../utils/axios.js';
+import router from '../router.js';
 
 export default {
   name: 'Login',
@@ -70,29 +72,32 @@ export default {
     }
   },
   methods: {
-    authLogin() {
-      this.axios.post('auth/login', {
+    login() {
+      axios.post('auth/login', {
         email: this.formEmail,
         password: this.formPassword
       }).then(console.log('login ok', this.form.email, this.form.password))
       .catch(console.log('login error', this.form.email, this.form.password));
     },
-    registr() {
-      this.axios.post('registr', {
+    singup() {
+      axios.post('auth/singup', {
         login: this.form.login,
         email: this.form.email,
         password: this.form.password,
         passwordConfirm: this.form.password
-      }).then(console.log('registr ok'), this.form.login, this.form.email, this.form.password)
-      .catch(console.log('regitstr error', this.form.login, this.form.email, this.form.password));
+      }).then(data => {
+        console.log('singup ok', data, this.form.login, this.form.email, this.form.password);
+      }).catch(err => {
+        console.log('singup error', err, this.form.login, this.form.email, this.form.password)
+      });
     },
     google() {
-      this.axios.post('auth/google')
+      axios.post('auth/google')
       .then(console.log('google'))
       .catch(console.log('google error'));
     },
     github() {
-      this.axios.post('auth/github')
+      axios.post('auth/github')
       .then(console.log('github'))
       .catch(console.log('github error'));
     },

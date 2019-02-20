@@ -29,6 +29,7 @@
 
 <script>
 import ListWrapper from '../components/ListWrapper.vue';
+import axios from '../utils/axios.js';
 
 export default {
   name: 'Games',
@@ -37,16 +38,13 @@ export default {
   },
   data() {
     return {
-      games: [
-        { gameId: '1', id1: 'player1', id2: 'anon', move: 54, modelType: 'torus' },
-        { gameId: '2', id1: 'Kid125', id2: 'CyberIO', move: 124, modelType: 'klein bottle' },
-        { gameId: '3', id1: 'player1', id2: 'anon', move: 54, modelType: 'torus' },
-        { gameId: '4', id1: 'Kid125', id2: 'CyberIO', move: 124, modelType: 'klein bottle' },
-        { gameId: '5', id1: 'player1', id2: 'anon', move: 54, modelType: 'torus' },
-        { gameId: '6', id1: 'Kid125', id2: 'CyberIO', move: 124, modelType: 'klein bottle' },
-        { gameId: '7', id1: 'player1', id2: 'anon', move: 54, modelType: 'torus' },
-      ]
+      games: []
     };
+  },
+  mounted() {
+    axios.get('getGames').then( games => {
+      this.games = games;
+    }).catch( err => { console.log('games not fetched: ', err) });
   }
 };
 </script>

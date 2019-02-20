@@ -13,7 +13,7 @@
 
 <script>
 import ListWrapper from '../components/ListWrapper.vue';
-import { io } from '../utils/socket.js';
+import io from '../utils/socket.js';
 
 export default {
   name: 'Chat',

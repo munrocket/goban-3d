@@ -3,11 +3,7 @@ import App from './App.vue';
 import router from './router';
 
 
-Vue.config.productionTip = false;console.log();
-
-// axios
-import axios from 'axios';
-Vue.prototype.axios = axios.create({ withCredentials: true, baseURL: 'http://localhost:3000/'});
+Vue.config.productionTip = false;
 
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
