@@ -27,10 +27,10 @@ export default new Router({
     {
       path: '/chat',
       name: 'Chat',
-      component: Chat
-      // function() {
-      //   return /* webpack chunk-name chat */ import('./views/Chat.vue');
-      // }
+      component: Chat,
+      function() {
+        return /* webpack chunk-name: chat */ import('./views/Chat.vue');
+      }
     },
     {
       path: '/about',

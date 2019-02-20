@@ -53,6 +53,11 @@
         </button>
       </div>
     </form>
+    <br>
+    <br>
+    <button class="button is-danger" @click="logout()">
+      Logout test
+    </button>
   </list-wrapper>
 </template>
 
@@ -74,10 +79,13 @@ export default {
   methods: {
     login() {
       axios.post('auth/login', {
-        email: this.formEmail,
-        password: this.formPassword
+        email: this.form.email,
+        password: this.form.password
       }).then(console.log('login ok', this.form.email, this.form.password))
       .catch(console.log('login error', this.form.email, this.form.password));
+    },
+    logout() {
+      axios.get('auth/logout').then(data => {console.log(data)}).catch(err => {console.log(err)});
     },
     singup() {
       axios.post('auth/singup', {

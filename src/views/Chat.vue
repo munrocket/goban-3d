@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted() {
-    io.socket.on('message', (data) => {
+    io.socket.emit('join', { roomName:'global' }, (data) => {
       if (data.roomName === 'global') this.messages.push(data.message);
     });
   },
