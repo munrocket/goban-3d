@@ -35,6 +35,7 @@
 import ListWrapper from '../components/ListWrapper.vue';
 import io from '../utils/socket.js';
 import axios from '../utils/axios.js';
+import router from '../router';
 
 export default {
   name: 'Players',
@@ -50,26 +51,20 @@ export default {
     axios.get('players').then( players => {
       this.players = players;
     }).catch( err => {
-      this.players = [{ id: 'wassup_player', win: 19, loss: 1, status: 0 },
-      { id: 'who_are_here', win: 1, loss: 9, status: 0 },
+      this.players = [{ id: 'ivan', win: 19, loss: 1, status: 0 },
+      { id: 'anna', win: 1, loss: 9, status: 0 },
       { id: 'i_am_just_watching', win: 0, loss: 0, status: 1 },
       { id: 'i_am_busy', win: 0, loss: 0, status: 10 },
       { id: 'wassup_player1', win: 19, loss: 1, status: 0 }];
-    });
-
-    client.on('onInvite').then(data => {
-      console.log(data, ', client.id: ', data.id);
-    }).catch(err => {
-      console.log(err);
     });
   },
   methods: {
     invite(opponentId) {
       console.log('invite event for player', opponentId);
-      io.emit('invite', { id:opponentId }).then(resp => {
-        console.log(resp);
-      }).catch(err => {
-        console.log(err);
+      io.emit('invite', { id: opponentId }, (err, assept) => {
+        if (assept) {
+          router.push({ name: 'PvP' });
+        };
       });
     }
   }

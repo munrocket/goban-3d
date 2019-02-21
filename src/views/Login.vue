@@ -3,29 +3,14 @@
     <form>
       <div class="field-body field">
         <div class="field">
-          <input
-            v-model="form.login"
-            class="input"
-            type="text"
-            placeholder="Login"
-          >
+          <input v-model="form.login" class="input" type="text" placeholder="Login">
         </div>
         <div class="field">
-          <input
-            v-model="form.email"
-            class="input"
-            type="email"
-            placeholder="Email"
-          >
+          <input v-model="form.email" class="input" type="email" placeholder="Email">
         </div>
       </div>
       <div class="field">
-        <input
-          v-model="form.password"
-          class="input"
-          type="password"
-          placeholder="Password"
-        >
+        <input v-model="form.password" class="input" type="password" placeholder="Password">
       </div>
       <div class="field-body field">
         <div class="control">
@@ -53,18 +38,14 @@
         </button>
       </div>
     </form>
-    <br>
-    <br>
-    <button class="button is-danger" @click="logout()">
-      Logout test
-    </button>
   </list-wrapper>
 </template>
 
 <script>
 import ListWrapper from '../components/ListWrapper.vue';
-import axios from '../utils/axios.js';
 import router from '../router.js';
+import axios from '../utils/axios.js';
+import store from '../utils/store.js';
 
 export default {
   name: 'Login',
@@ -81,11 +62,11 @@ export default {
       axios.post('auth/login', {
         email: this.form.email,
         password: this.form.password
-      }).then(console.log('login ok', this.form.email, this.form.password))
-      .catch(console.log('login error', this.form.email, this.form.password));
-    },
-    logout() {
-      axios.get('auth/logout').then(data => {console.log(data)}).catch(err => {console.log(err)});
+      }).then(resp => {
+        console.log(resp.data.user.name, 'is loggined.');
+        store.myId = resp.data.user.name;
+        router.push( { name: 'Players' });
+      }).catch(err => console.log('login error', err, this.form.email, this.form.password));
     },
     singup() {
       axios.post('auth/singup', {
@@ -94,20 +75,20 @@ export default {
         password: this.form.password,
         passwordConfirm: this.form.password
       }).then(data => {
-        console.log('singup ok', data, this.form.login, this.form.email, this.form.password);
+        store.myId = data.user;
       }).catch(err => {
         console.log('singup error', err, this.form.login, this.form.email, this.form.password)
       });
     },
     google() {
       axios.post('auth/google')
-      .then(console.log('google'))
-      .catch(console.log('google error'));
+      .then(console.log('google auth ok'))
+      .catch(console.log('google auth error'));
     },
     github() {
       axios.post('auth/github')
-      .then(console.log('github'))
-      .catch(console.log('github error'));
+      .then(console.log('github auth ok'))
+      .catch(console.log('github auth error'));
     },
   }
 }

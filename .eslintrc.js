@@ -14,7 +14,7 @@ module.exports = {
     'no-console': 1,
     'vue/html-self-closing': 1,
     'vue/max-attributes-per-line': [2, {
-      singleline: 3,
+      singleline: 5,
       multiline: {
         max: 1,
         allowFirstLine: false

@@ -2,12 +2,18 @@
   <section id="app" class="section container">
     <div class="columns row-reverse">
       <div id="login">
-        <router-link to="/login" class="button is-rounded">
+        <router-link v-if="store.myId == null" to="/login" class="button is-rounded">
           <span class="icon is-small">
             <font-awesome-icon icon="sign-in-alt" />
           </span>
           <span>Login</span>
         </router-link>
+        <button v-else class="button is-rounded is-danger" @click="logout()">
+          <span class="icon is-small">
+            <font-awesome-icon icon="sign-in-alt" />
+          </span>
+          <span>{{ store.myId }} Logout</span>
+        </button>
       </div>
       <div class="column is-half">
         <canvas-renderer />
@@ -38,6 +44,10 @@
 
 <script>
 import CanvasRenderer from './components/CanvasRenderer.vue';
+import store from './utils/store.js';
+import router from './router.js';
+import axios from './utils/axios.js';
+import io from './utils/socket.js';
 
 export default {
   name: 'App',
@@ -52,8 +62,17 @@ export default {
         { url: '/games', name: 'Games', icon: 'gamepad' },
         { url: '/chat', name: 'Chat', icon: 'comment-dots' },
         { url: '/about', name: 'About', icon: 'info-circle' },
-      ]
+      ],
+      store
     };
+  },
+  methods: {
+    logout() {
+      axios.get('auth/logout').then(resp => {
+        console.log(store.myId, 'is logout.');
+        store.myId = null;
+      }).catch(err => {console.log(err)});
+    },
   }
 }
 </script>

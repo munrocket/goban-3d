@@ -6,6 +6,7 @@ import Games from './views/Games.vue';
 import About from './views/About.vue';
 import Chat from './views/Chat.vue';
 import Login from './views/Login.vue';
+import PvP from './views/PvP.vue';
 
 Vue.use(Router);
 
@@ -29,7 +30,7 @@ export default new Router({
       name: 'Chat',
       component: Chat,
       function() {
-        return /* webpack chunk-name: chat */ import('./views/Chat.vue');
+        return import(/* webpackChunkName: "chat" */ './views/Chat.vue');
       }
     },
     {
@@ -41,6 +42,14 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/pvp',
+      name: 'PvP',
+      component: PvP,
+      function() {
+        return import(/* webpackChunkName: "pvp" */ './views/PvP.vue');
+      }
     },
   ]
 });

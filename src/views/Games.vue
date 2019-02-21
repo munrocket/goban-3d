@@ -14,12 +14,12 @@
       </thead>
       <tbody>
         <tr v-for="game in games" :key="game.gameId" :ref="'game_'.concat(game.gameId)">
-          <td>{{ game.id1 }} vs {{ game.id2 }}</td>
+          <td>{{ game.white }} vs {{ game.black }}</td>
           <td class="has-text-centered">
             {{ game.move }}
           </td>
           <td class="has-text-centered">
-            {{ game.modelType }}
+            {{ game.type }}
           </td>
         </tr>
       </tbody>

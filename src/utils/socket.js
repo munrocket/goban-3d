@@ -1,2 +1,2 @@
-import socket from 'socket.io-client';
-export default socket('http://localhost:3000');
+import io from 'socket.io-client';
+export default io('http://localhost:3000');
